@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: black;
+    color: aliceblue;
+    overflow-x: hidden;
+}
+.container{
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 2px;
+    position: relative;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+.logo{
+    padding: 1.5rem 0.5rem ;
+    font-size: 2rem;
+    font-weight: 300;
+}
+@keyframes animationGradient {
+  0% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 200% 100%;
+  }
+}
+nav {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding-left: 2%;
+}
+
+nav a {
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  padding-bottom: 4px; 
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(to right, #c34afc, #7313f1, #413f3f);
+  background-size: 200%;
+  background-position: 0% 100%;
+  border-radius: 50px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  animation: animationGradient 2.5s linear infinite;
+}
